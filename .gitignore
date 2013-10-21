@@ -138,3 +138,4 @@ Podfile.lock
 #
 # ...none. Everything is now explained.
 
+*.orig
