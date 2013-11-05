@@ -89,26 +89,16 @@
 		CE565B1316F5A0390097A66B /* SOAP12UpgradeType.h in Headers */ = {isa = PBXBuildFile; fileRef = CE565AA616F5A0390097A66B /* SOAP12UpgradeType.h */; };
 		CE565B1416F5A0390097A66B /* SOAP12UpgradeType.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565AA716F5A0390097A66B /* SOAP12UpgradeType.m */; };
 		CE565B1516F5A0390097A66B /* AFHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = CE565AAA16F5A0390097A66B /* AFHTTPClient.h */; };
-		CE565B1616F5A0390097A66B /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565AAB16F5A0390097A66B /* AFHTTPClient.m */; };
 		CE565B1716F5A0390097A66B /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CE565AAC16F5A0390097A66B /* AFHTTPRequestOperation.h */; };
-		CE565B1816F5A0390097A66B /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565AAD16F5A0390097A66B /* AFHTTPRequestOperation.m */; };
 		CE565B1916F5A0390097A66B /* AFImageRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CE565AAE16F5A0390097A66B /* AFImageRequestOperation.h */; };
-		CE565B1A16F5A0390097A66B /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565AAF16F5A0390097A66B /* AFImageRequestOperation.m */; };
 		CE565B1B16F5A0390097A66B /* AFJSONRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CE565AB016F5A0390097A66B /* AFJSONRequestOperation.h */; };
-		CE565B1C16F5A0390097A66B /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565AB116F5A0390097A66B /* AFJSONRequestOperation.m */; };
 		CE565B1D16F5A0390097A66B /* AFJSONUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = CE565AB216F5A0390097A66B /* AFJSONUtilities.h */; };
-		CE565B1E16F5A0390097A66B /* AFJSONUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565AB316F5A0390097A66B /* AFJSONUtilities.m */; };
 		CE565B1F16F5A0390097A66B /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CE565AB416F5A0390097A66B /* AFNetworkActivityIndicatorManager.h */; };
-		CE565B2016F5A0390097A66B /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565AB516F5A0390097A66B /* AFNetworkActivityIndicatorManager.m */; };
 		CE565B2116F5A0390097A66B /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = CE565AB616F5A0390097A66B /* AFNetworking.h */; };
 		CE565B2216F5A0390097A66B /* AFPropertyListRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CE565AB716F5A0390097A66B /* AFPropertyListRequestOperation.h */; };
-		CE565B2316F5A0390097A66B /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565AB816F5A0390097A66B /* AFPropertyListRequestOperation.m */; };
 		CE565B2416F5A0390097A66B /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CE565AB916F5A0390097A66B /* AFURLConnectionOperation.h */; };
-		CE565B2516F5A0390097A66B /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565ABA16F5A0390097A66B /* AFURLConnectionOperation.m */; };
 		CE565B2616F5A0390097A66B /* AFXMLRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CE565ABB16F5A0390097A66B /* AFXMLRequestOperation.h */; };
-		CE565B2716F5A0390097A66B /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565ABC16F5A0390097A66B /* AFXMLRequestOperation.m */; };
 		CE565B2816F5A0390097A66B /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = CE565ABD16F5A0390097A66B /* UIImageView+AFNetworking.h */; };
-		CE565B2916F5A0390097A66B /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565ABE16F5A0390097A66B /* UIImageView+AFNetworking.m */; };
 		CE565B2A16F5A0390097A66B /* GDataXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = CE565AC016F5A0390097A66B /* GDataXMLNode.h */; };
 		CE565B2B16F5A0390097A66B /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565AC116F5A0390097A66B /* GDataXMLNode.m */; };
 		CE565B2C16F5A0390097A66B /* XMLWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = CE565AC316F5A0390097A66B /* XMLWriter.h */; };
@@ -677,16 +667,6 @@
 				CE565B1016F5A0390097A66B /* SOAP12Subcode.m in Sources */,
 				CE565B1216F5A0390097A66B /* SOAP12SupportedEnvType.m in Sources */,
 				CE565B1416F5A0390097A66B /* SOAP12UpgradeType.m in Sources */,
-				CE565B1616F5A0390097A66B /* AFHTTPClient.m in Sources */,
-				CE565B1816F5A0390097A66B /* AFHTTPRequestOperation.m in Sources */,
-				CE565B1A16F5A0390097A66B /* AFImageRequestOperation.m in Sources */,
-				CE565B1C16F5A0390097A66B /* AFJSONRequestOperation.m in Sources */,
-				CE565B1E16F5A0390097A66B /* AFJSONUtilities.m in Sources */,
-				CE565B2016F5A0390097A66B /* AFNetworkActivityIndicatorManager.m in Sources */,
-				CE565B2316F5A0390097A66B /* AFPropertyListRequestOperation.m in Sources */,
-				CE565B2516F5A0390097A66B /* AFURLConnectionOperation.m in Sources */,
-				CE565B2716F5A0390097A66B /* AFXMLRequestOperation.m in Sources */,
-				CE565B2916F5A0390097A66B /* UIImageView+AFNetworking.m in Sources */,
 				CE565B2B16F5A0390097A66B /* GDataXMLNode.m in Sources */,
 				CE565B2D16F5A0390097A66B /* XMLWriter.m in Sources */,
 				CE565B2F16F5A0390097A66B /* PicoSOAPRequestOperation.m in Sources */,
