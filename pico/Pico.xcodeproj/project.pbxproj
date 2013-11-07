@@ -517,6 +517,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE565ACA16F5A0390097A66B /* PicoCache.h in Headers */,
+				CE565ACC16F5A0390097A66B /* PicoCacheEntry.h in Headers */,
 				CE565AEA16F5A0390097A66B /* PicoXMLElement.h in Headers */,
 				CE565AE616F5A0390097A66B /* PicoClassSchema.h in Headers */,
 				CE565B3016F5A0390097A66B /* PicoSOAPClient.h in Headers */,
@@ -525,8 +527,6 @@
 				CE565AE816F5A0390097A66B /* PicoPropertySchema.h in Headers */,
 				CE565ADA16F5A0390097A66B /* PicoConfig.h in Headers */,
 				CE565ADC16F5A0390097A66B /* PicoConstants.h in Headers */,
-				CE565ACA16F5A0390097A66B /* PicoCache.h in Headers */,
-				CE565ACC16F5A0390097A66B /* PicoCacheEntry.h in Headers */,
 				CE565ACE16F5A0390097A66B /* PicoBoolConverter.h in Headers */,
 				CE565AD016F5A0390097A66B /* PicoConvertable.h in Headers */,
 				CE565AD116F5A0390097A66B /* PicoConverter.h in Headers */,
