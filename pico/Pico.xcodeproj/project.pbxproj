@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		848FB78A18383113000FC3BD /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565AAB16F5A0390097A66B /* AFHTTPClient.m */; };
+		848FB78B18383113000FC3BD /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565AAD16F5A0390097A66B /* AFHTTPRequestOperation.m */; };
+		848FB78C18383113000FC3BD /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565AAF16F5A0390097A66B /* AFImageRequestOperation.m */; };
+		848FB78D18383113000FC3BD /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565AB116F5A0390097A66B /* AFJSONRequestOperation.m */; };
+		848FB78E18383113000FC3BD /* AFJSONUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565AB316F5A0390097A66B /* AFJSONUtilities.m */; };
+		848FB78F18383113000FC3BD /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565AB516F5A0390097A66B /* AFNetworkActivityIndicatorManager.m */; };
+		848FB79018383113000FC3BD /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565AB816F5A0390097A66B /* AFPropertyListRequestOperation.m */; };
+		848FB79118383113000FC3BD /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565ABA16F5A0390097A66B /* AFURLConnectionOperation.m */; };
+		848FB79218383113000FC3BD /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565ABC16F5A0390097A66B /* AFXMLRequestOperation.m */; };
+		848FB79318383113000FC3BD /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CE565ABE16F5A0390097A66B /* UIImageView+AFNetworking.m */; };
 		CE1D915C16F6CF2300A21D2C /* PicoXMLRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CE1D915A16F6CF2300A21D2C /* PicoXMLRequestOperation.h */; };
 		CE1D915D16F6CF2300A21D2C /* PicoXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1D915B16F6CF2300A21D2C /* PicoXMLRequestOperation.m */; };
 		CE1D916016F6D29C00A21D2C /* PicoXMLClient.h in Headers */ = {isa = PBXBuildFile; fileRef = CE1D915E16F6D29C00A21D2C /* PicoXMLClient.h */; };
@@ -632,6 +642,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848FB78A18383113000FC3BD /* AFHTTPClient.m in Sources */,
+				848FB78B18383113000FC3BD /* AFHTTPRequestOperation.m in Sources */,
+				848FB78C18383113000FC3BD /* AFImageRequestOperation.m in Sources */,
+				848FB78D18383113000FC3BD /* AFJSONRequestOperation.m in Sources */,
+				848FB78E18383113000FC3BD /* AFJSONUtilities.m in Sources */,
+				848FB78F18383113000FC3BD /* AFNetworkActivityIndicatorManager.m in Sources */,
+				848FB79018383113000FC3BD /* AFPropertyListRequestOperation.m in Sources */,
+				848FB79118383113000FC3BD /* AFURLConnectionOperation.m in Sources */,
+				848FB79218383113000FC3BD /* AFXMLRequestOperation.m in Sources */,
+				848FB79318383113000FC3BD /* UIImageView+AFNetworking.m in Sources */,
 				CE565ACB16F5A0390097A66B /* PicoCache.m in Sources */,
 				CE565ACD16F5A0390097A66B /* PicoCacheEntry.m in Sources */,
 				CE565ACF16F5A0390097A66B /* PicoBoolConverter.m in Sources */,
