@@ -12,11 +12,13 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/andrewBatutin/pico.git", :tag => "v0.5.2" }
 
 
-  s.source_files  = 'pico/PicoSource', 
-  s.exclude_files = 'pico/PicoSource/Vendor/AFNetworking', 'pico/PicoSource/Vendor/GDataXML', 'pico/PicoSource/Vendor/OrderedDictionary'
+  s.source_files  = 'pico/PicoSource/**/*.{h.m}', 
+  s.exclude_files = 'pico/PicoSource/Vendor/AFNetworking'
+  s.exclude_files = 'pico/PicoSource/Vendor/GDataXML'
+  s.exclude_files = 'pico/PicoSource/Vendor/OrderedDictionary'
 
-  s.libraries = 'xml2'
-  s.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }  
+#  s.libraries = 'xml2'
+#  s.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }  
 
   s.dependency 'AFNetworking', '~> 2.0.2'
   s.dependency 'OrderedDictionary', '~> 1.1'
