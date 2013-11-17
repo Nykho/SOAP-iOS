@@ -9,13 +9,13 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '6.0'
 
-  s.source       = { :git => "https://github.com/andrewBatutin/pico.git", :tag => "v0.5.2" }
+  s.source       = { :git => "https://github.com/andrewBatutin/pico.git", :tag => "v0.5.2.1" }
 
 
   s.source_files  = 'pico/PicoSource/**/*.{h.m}', 
-  s.exclude_files = 'pico/PicoSource/Vendor/AFNetworking'
-  s.exclude_files = 'pico/PicoSource/Vendor/GDataXML'
-  s.exclude_files = 'pico/PicoSource/Vendor/OrderedDictionary'
+  s.exclude_files = 'pico/PicoSource/Vendor/AFNetworking/*{h,m}'
+  s.exclude_files = 'pico/PicoSource/Vendor/GDataXML/*{h.m}'
+  s.exclude_files = 'pico/PicoSource/Vendor/OrderedDictionary/*{h,m}'
 
 #  s.libraries = 'xml2'
 #  s.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }  
