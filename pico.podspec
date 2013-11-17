@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name	 = 'pico'
-  s.version      = "0.5.1"
+  s.version      = "0.5.2"
   s.summary      = "A light iOS web service client framework."
   s.homepage     = "https://github.com/andrewBatutin/pico"
 
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '6.0'
 
-  s.source       = { :git => "https://github.com/andrewBatutin/pico.git", :tag => "v0.5.1" }
+  s.source       = { :git => "https://github.com/andrewBatutin/pico.git", :tag => "v0.5.2" }
 
 
   s.source_files  = 'pico/PicoSource', 
