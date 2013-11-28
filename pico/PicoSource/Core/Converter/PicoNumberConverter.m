@@ -18,6 +18,9 @@
 
 -(NSNumber *)read:(NSString *)value withConfig:(PicoConfig *)config {
 	NSNumber *result = [config.numberFormatter numberFromString:value];
+    if (!result){
+        result = @([value doubleValue]);
+    }
 	return result;
 }
 
