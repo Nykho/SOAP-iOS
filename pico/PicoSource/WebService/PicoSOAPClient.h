@@ -6,12 +6,14 @@
 //  Copyright (c) 2013 LeanSoft Technology. All rights reserved.
 //
 
-#import "AFHTTPClient.h"
+//#import "AFHTTPSessionManager.h"
+#import "AFHTTPRequestOperationManager.h"
 #import "PicoBindable.h"
 #import "PicoSOAPRequestOperation.h"
 #import "PicoConfig.h"
 
-@interface PicoSOAPClient : AFHTTPClient
+//@interface PicoSOAPClient : AFHTTPSessionManager
+@interface PicoSOAPClient : AFHTTPRequestOperationManager
 
 /**
  Target endpoint url, mandatory

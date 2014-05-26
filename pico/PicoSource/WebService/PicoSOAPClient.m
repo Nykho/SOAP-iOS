@@ -16,6 +16,7 @@
 #import "SOAP12Body.h"
 #import "SOAP11Header.h"
 #import "SOAP12Header.h"
+#import "PicoSOAPResponseSerialization.h"
 
 enum {
     PicoSOAPParameterEncoding = 10
@@ -48,11 +49,15 @@ enum {
     
     _config = [[PicoConfig alloc] init]; // default config
     
-    self.parameterEncoding = PicoSOAPParameterEncoding;
-    
-    [self registerHTTPOperationClass:[PicoSOAPRequestOperation class]];
-    [self setDefaultHeader:@"Accept" value:@"text/xml"];
-    [self setDefaultHeader:@"Content-Type" value:@"text/xml"];
+    //self.parameterEncoding = PicoSOAPParameterEncoding;
+    self.requestSerializer = [AFHTTPRequestSerializer serializer];
+    self.responseSerializer = [PicoSOAPResponseSerializer serializer];
+
+//    [self registerHTTPOperationClass:[PicoSOAPRequestOperation class]];
+    //[self setDefaultHeader:@"Accept" value:@"text/xml"];
+    //[self setDefaultHeader:@"Content-Type" value:@"text/xml"];
+    [self.requestSerializer setValue:@"text/xml" forHTTPHeaderField:@"Accept"];
+    [self.requestSerializer setValue:@"text/xml" forHTTPHeaderField:@"Content-Type"];
     
     self.endpointURL = URL;
     
@@ -114,7 +119,8 @@ enum {
             NSLog(@"Request HTTP Headers : \n%@", [request allHTTPHeaderFields]);
         }
 
-        [self enqueueHTTPRequestOperation:httpOperation];
+        //[self enqueueHTTPRequestOperation:httpOperation];
+        [self.operationQueue addOperation:httpOperation];
         
     } @catch (NSException* ex) {
         NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithObject:@"Error to build request" forKey:NSLocalizedDescriptionKey];
@@ -137,12 +143,13 @@ enum {
     
     NSString *url = [self.endpointURL absoluteString];
     if (self.additionalParameters.count > 0) {
-        url = [url stringByAppendingFormat:[url rangeOfString:@"?"].location == NSNotFound ? @"?%@" : @"&%@", AFQueryStringFromParametersWithEncoding(self.additionalParameters, self.stringEncoding)];
+        // TODO: fix this
+//        url = [url stringByAppendingFormat:[url rangeOfString:@"?"].location == NSNotFound ? @"?%@" : @"&%@", self.requestSerializer.AFQueryStringFromParametersWithEncoding(self.additionalParameters, self.requestSerializer.stringEncoding)];
     }
     if (self.debug) {
         NSLog(@"Sending request to : %@", url);
     }
-    NSMutableURLRequest *request = [super requestWithMethod:method path:url parameters:nil];
+    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:method URLString:url parameters:nil];
     
     PicoSOAPWriter *soapWriter = [[PicoSOAPWriter alloc] initWithConfig:self.config];
     

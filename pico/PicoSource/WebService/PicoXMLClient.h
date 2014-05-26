@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 LeanSoft Technology. All rights reserved.
 //
 
-#import "AFHTTPClient.h"
+#import "AFHTTPSessionManager.h"
 #import "PicoBindable.h"
 #import "PicoXMLRequestOperation.h"
 #import "PicoConfig.h"
 
-@interface PicoXMLClient : AFHTTPClient
+@interface PicoXMLClient : AFHTTPSessionManager
 
 /**
  Target endpoint url, mandatory

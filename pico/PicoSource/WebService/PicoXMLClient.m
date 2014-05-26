@@ -37,11 +37,15 @@ enum {
     
     _config = [[PicoConfig alloc] init]; // default config
     
-    self.parameterEncoding = PicoXMLParameterEncoding;
+    //self.parameterEncoding = PicoXMLParameterEncoding;
+    self.requestSerializer = [AFHTTPRequestSerializer serializer];
+    self.responseSerializer = [AFXMLParserResponseSerializer serializer];
     
-    [self registerHTTPOperationClass:[PicoXMLRequestOperation class]];
-    [self setDefaultHeader:@"Accept" value:@"text/xml"];
-    [self setDefaultHeader:@"Content-Type" value:@"text/xml"];
+    //[self registerHTTPOperationClass:[PicoXMLRequestOperation class]];
+    //[self setDefaultHeader:@"Accept" value:@"text/xml"];
+    //[self setDefaultHeader:@"Content-Type" value:@"text/xml"];
+    [self.requestSerializer setValue:@"text/xml" forHTTPHeaderField:@"Accept"];
+    [self.requestSerializer setValue:@"text/xml" forHTTPHeaderField:@"Content-Type"];
     
     self.endpointURL = URL;
     

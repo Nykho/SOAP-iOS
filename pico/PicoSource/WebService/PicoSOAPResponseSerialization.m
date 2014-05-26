@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 LeanSoft Technology. All rights reserved.
 //
 
-#import "PicoSOAPRequestOperation.h"
+#import "PicoSOAPResponseSerialization.h"
 #import "PicoSOAPReader.h"
 #import "SOAP11Envelope.h"
 #import "SOAP12Envelope.h"
@@ -22,12 +22,12 @@ static dispatch_queue_t soap_request_operation_processing_queue() {
     return ls_soap_request_operation_processing_queue;
 }
 
-@interface PicoSOAPRequestOperation ()
+@interface PicoSOAPResponseSerializer ()
 @property (readwrite, nonatomic, retain) NSError *PicoError;
 @property (readwrite, nonatomic, retain) id responseObj;
 @end
 
-@implementation PicoSOAPRequestOperation
+@implementation PicoSOAPResponseSerializer
 
 @synthesize responseObj = _responseObj;
 @synthesize PicoError  = _PicoError;
@@ -43,6 +43,69 @@ static dispatch_queue_t soap_request_operation_processing_queue() {
     [_config release];
     [super dealloc];
 }
+
+-(id)responseObjectForResponse:(NSURLResponse *)response data:(NSData *)data error:(NSError *__autoreleasing *)error
+{
+    NSXMLParser *xmlParser = [super responseObjectForResponse:response data:data error:error];
+    
+    
+    if (!_responseObj && [self isFinished] && [self.responseData length] > 0 && !self.PicoError) {
+        
+        if (self.debug) {
+            NSLog(@"Response message : ");
+            NSString *message = [[NSString alloc] initWithData:self.responseData encoding:CFStringConvertEncodingToNSStringEncoding(CFStringConvertIANACharSetNameToEncoding((CFStringRef)self.config.encoding))];
+            NSLog(@"%@", message);
+            [message release];
+        }
+        
+        PicoSOAPReader *soapReader = nil;
+        @try {
+            // unmarshall to object
+            soapReader = [[PicoSOAPReader alloc] initWithConfig:self.config];
+            if (self.soapVersion == SOAP11) {
+                SOAP11Envelope *soap11Envelope = [soapReader fromData:self.responseData withSOAPClass:[SOAP11Envelope class] innerClass:self.responseClazz];
+                if (soap11Envelope && soap11Envelope.body && soap11Envelope.body.any.count > 0) {
+                    self.responseObj = [soap11Envelope.body.any objectAtIndex:0];
+                }
+            } else {
+                SOAP12Envelope *soap12Envelope = [soapReader fromData:self.responseData withSOAPClass:[SOAP12Envelope class] innerClass:self.responseClazz];
+                if (soap12Envelope && soap12Envelope.body && soap12Envelope.body.any.count > 0) {
+                    self.responseObj = [soap12Envelope.body.any objectAtIndex:0];
+                }
+            }
+        } @catch (NSException *ex) {
+            NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithObject:@"Error to read soap response" forKey:NSLocalizedDescriptionKey];
+            [userInfo setValue:ex.reason forKey:NSLocalizedFailureReasonErrorKey];
+            [userInfo setValue:ex forKey:NSUnderlyingErrorKey];
+            self.PicoError = [NSError errorWithDomain:PicoErrorDomain code:ReaderError userInfo:userInfo];
+            
+            if (self.debug) {
+                NSLog(@"Error to read response message : \n%@", [self.PicoError localizedDescription]);
+            }
+            
+        } @finally {
+            [soapReader release];
+        }
+    }
+    
+    return _responseObj;
+    
+//    NSDictionary * json = [super responseObjectForResponse:response data:data error:error];
+//    NSMutableArray * posts = [NSMutableArray new];
+//    NSDictionary * dataObject = json[@"data"];
+//    if (dataObject != nil)
+//    {
+//        NSArray * children = dataObject[@"children"];
+//        [children enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//            NSDictionary * postData = [(NSDictionary*)obj objectForKey:@"data"];
+//            [posts addObject:[RedditPost postWithProperties:postData]];
+//        }];
+//    }
+//    return posts;
+}
+
+
+
 
 -(id)responseObj {
     if (!_responseObj && [self isFinished] && [self.responseData length] > 0 && !self.PicoError) {
