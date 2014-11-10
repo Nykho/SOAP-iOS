@@ -211,6 +211,9 @@ All samples are in the [Examples](https://github.com/bulldog2011/pico/tree/maste
 
 ## Version History
 
+#### 0.5.1 — *November 10, 2014*
+
+  * Cocoapods Support
 
 #### 0.5.0 — *March 25, 2013*
 
